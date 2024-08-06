@@ -10,6 +10,9 @@ vim.opt.breakindent = true
 vim.opt.smartindent = true
 vim.opt.wrap = false
 
+-- File format for Windows
+vim.opt.fileformat = 'dos'
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
