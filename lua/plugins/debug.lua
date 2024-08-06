@@ -52,5 +52,16 @@ return {
 				launch_scene = true,
 			}
 		}
+
+		-- Debug Keybinds
+		vim.keymap.set('n', '<F5>', dap.continue, { desc = "Debug: Start/Continue" })
+		vim.keymap.set('n', '<F6>', function()
+			dap.terminate()
+			dapui.close()
+		end)
+		vim.keymap.set('n', '<F10>', dap.step_over, { desc = "Debug: Step Over" })
+		vim.keymap.set('n', '<F11>', dap.step_into, { desc = "Debug: Step Into" })
+		vim.keymap.set('n', '<F12>', dap.step_out, { desc = "Debug: Step Out" })
+		vim.keymap.set('n', '<leader>B', dap.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
 	end
 }
