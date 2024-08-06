@@ -1,4 +1,4 @@
-return { 
+return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
 	dependencies = {
@@ -9,5 +9,7 @@ return {
 	config = function()
 		vim.keymap.set("n", "<leader>t", ":Neotree filesystem reveal left<CR>", {})
 		vim.keymap.set("n", "<leader>n", "<C-w>w", {})
+		vim.keymap.set("n", "<leader>b", ":tabn<CR>", {})
+		vim.keymap.set("n", "<leader>q", ":tabc<CR>", {})
 	end
 }
