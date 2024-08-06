@@ -10,7 +10,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "zls"}
+				ensure_installed = { "lua_ls", "zls" }
 			})
 		end
 	},
@@ -25,7 +25,24 @@ return {
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 			vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
-		end
 
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			local gdscript_config = {
+				capabilities = capabilities,
+				settings = {},
+			}
+
+			if vim.fn.has "win32" == 1 then
+				gdscript_config["cmd"] = { "ncat", "localhost", os.getenv "GDScript_Port" or "6005" }
+			end
+
+			require("lspconfig").gdscript.setup(gdscript_config)
+		end
+	},
+	{
+		"folke/lazydev.nvim",
+		config = function()
+			require("lazydev").setup()
+		end
 	}
 }

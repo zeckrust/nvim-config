@@ -13,7 +13,7 @@ return {
 		require('mason-nvim-dap').setup({
 			automatic_installation = true,
 			handlers = {},
-			ensure_installed = { 'delve' },
+			ensure_installed = {},
 		})
 
 		dapui.setup({
