@@ -42,9 +42,5 @@ vim.keymap.set("n", "<leader><Down>", "<C-w>j", {})
 vim.keymap.set("n", "<leader><Left>", "<C-w>h", {})
 vim.keymap.set("n", "<leader><Right>", "<C-w>l", {})
 
-vim.keymap.set("n", "<leader>n", ":tabn<CR>", {})
-vim.keymap.set("n", "<leader>b", ":tabp<CR>", {})
-vim.keymap.set("n", "<leader>q", ":tabc<CR>", {})
-
 vim.keymap.set("v", "<Tab>", ">gv", {})
 vim.keymap.set("v", "<S-Tab>", "<gv", {})
