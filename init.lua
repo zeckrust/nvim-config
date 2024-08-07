@@ -33,6 +33,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
+-- Colortheme
+vim.cmd.colorscheme "ayu"
 
 -- Keybindings
 vim.keymap.set("n", "<leader><Up>", "<C-w>k", {})
@@ -46,5 +48,3 @@ vim.keymap.set("n", "<leader>q", ":tabc<CR>", {})
 
 vim.keymap.set("v", "<Tab>", ">gv", {})
 vim.keymap.set("v", "<S-Tab>", "<gv", {})
-
-vim.keymap.set({"n", "v"}, "<C-é>", ":CommentToggle<CR>", {})

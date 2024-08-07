@@ -1,4 +1,4 @@
-return { 
+return {
 	"Shatur/neovim-ayu", 
 	name = "ayu",
 	priority = 1000,
@@ -8,7 +8,5 @@ return {
 			terminal = true, 
 			overrides = {},
 		})
-
-		vim.cmd.colorscheme "ayu"
 	end
 }
