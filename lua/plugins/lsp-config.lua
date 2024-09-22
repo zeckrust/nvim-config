@@ -55,14 +55,7 @@ return {
 		},
 		config = function ()
 			require("flutter-tools").setup{}
-
-			vim.keymap.set('n', '<leader>r', require('telescope').extensions.flutter.commands, { desc = 'Open command Flutter' })
-			vim.keymap.set('n', '<leader>br', function()
-				vim.cmd('20new')
-				vim.cmd('te fvm flutter packages pub run build_runner build --delete-conflicting-outputs')
-				vim.cmd('2sleep | normal G')
-    		end
-			)
+			vim.keymap.set('n', '<leader>ft', require('telescope').extensions.flutter.commands, { desc = 'Open command Flutter' })
 		end
 	},
 }

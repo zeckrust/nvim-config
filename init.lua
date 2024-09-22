@@ -12,7 +12,6 @@ vim.opt.wrap = false
 
 vim.opt.fileformat = "unix"
 vim.opt.encoding = "utf-8"
-vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h12" }
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -36,6 +35,12 @@ require("lazy").setup("plugins")
 
 -- Colortheme
 vim.cmd.colorscheme "ayu"
+
+-- Font
+vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h12" }
+
+-- Line Numbers Color
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#878787" })
 
 -- Keybindings
 vim.keymap.set("n", "<leader><Up>", "<C-w>k", {})
