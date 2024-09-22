@@ -12,6 +12,7 @@ vim.opt.wrap = false
 
 vim.opt.fileformat = "unix"
 vim.opt.encoding = "utf-8"
+vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h12" }
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
