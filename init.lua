@@ -42,6 +42,9 @@ vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h12" }
 -- Line Numbers Color
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#878787" })
 
+-- Neovide
+vim.g.neovide_cursor_animation_length = 0.0
+
 -- Keybindings
 vim.keymap.set("n", "<leader><Up>", "<C-w>k", {})
 vim.keymap.set("n", "<leader><Down>", "<C-w>j", {})
