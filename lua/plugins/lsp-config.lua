@@ -25,7 +25,7 @@ return {
 
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-			vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
+			vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
 			vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format, {})
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -34,10 +34,14 @@ return {
 				settings = {},
 			}
 
-			if vim.fn.has "win32" == 1 then
+			if vim.fn.has "win32" == 1 then -- Windows
 				gdscript_config["cmd"] = { "ncat", "localhost", os.getenv "GDScript_Port" or "6005" }
+			else -- Linux
+				local pipepath = vim.fn.stdpath("cache") .. "/server.pipe"
+				if not vim.loop.fs_stat(pipepath) then
+					vim.fn.serverstart(pipepath)
+				end
 			end
-
 			lspconfig.gdscript.setup(gdscript_config)
 		end
 	},
@@ -54,9 +58,10 @@ return {
 			'nvim-lua/plenary.nvim',
 			'stevearc/dressing.nvim', -- optional for vim.ui.select
 		},
-		config = function ()
-			require("flutter-tools").setup{}
-			vim.keymap.set('n', '<leader>ft', require('telescope').extensions.flutter.commands, { desc = 'Open command Flutter' })
+		config = function()
+			require("flutter-tools").setup {}
+			vim.keymap.set('n', '<leader>ft', require('telescope').extensions.flutter.commands,
+				{ desc = 'Open command Flutter' })
 		end
 	},
 }
