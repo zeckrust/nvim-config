@@ -10,7 +10,13 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "zls", "rust_analyzer" }
+				ensure_installed = { "lua_ls",
+									 "zls",
+									 "rust_analyzer",
+									 "basedpyright",
+									 "asm_lsp",
+									 "clangd",
+				}
 			})
 		end
 	},
@@ -22,6 +28,9 @@ return {
 			lspconfig.lua_ls.setup({})
 			lspconfig.zls.setup({})
 			lspconfig.rust_analyzer.setup({})
+			lspconfig.basedpyright.setup({})
+			lspconfig.asm_lsp.setup({})
+			lspconfig.clangd.setup({})
 
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
