@@ -16,6 +16,7 @@ return {
 									 "basedpyright",
 									 "clangd",
 									 "denols",
+									 "cssls",
 				}
 			})
 		end
@@ -31,6 +32,7 @@ return {
 			lspconfig.basedpyright.setup({})
 			lspconfig.clangd.setup({})
 			lspconfig.denols.setup({})
+			lspconfig.cssls.setup({})
 
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
