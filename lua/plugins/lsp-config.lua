@@ -14,7 +14,6 @@ return {
 									 "zls",
 									 "rust_analyzer",
 									 "basedpyright",
-									 "asm_lsp",
 									 "clangd",
 									 "denols",
 				}
@@ -30,7 +29,6 @@ return {
 			lspconfig.zls.setup({})
 			lspconfig.rust_analyzer.setup({})
 			lspconfig.basedpyright.setup({})
-			lspconfig.asm_lsp.setup({})
 			lspconfig.clangd.setup({})
 			lspconfig.denols.setup({})
 
